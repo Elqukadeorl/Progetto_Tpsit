@@ -15,9 +15,9 @@ import javax.swing.JLabel;
  */
 public class GCavalli extends JFrame{
     int posizione=1;
-	GUICavalli[] partecipanti;
-	Cavalli[] threadpartecipanti;
-	Campo corsia;
+    GUICavalli[] partecipanti;
+    Cavalli[] threadpartecipanti;
+    Campo corsia;
 	
 	public GCavalli() { //costruttore
 		super("Gara di equitazione");
@@ -43,14 +43,9 @@ public class GCavalli extends JFrame{
 		boolean arrivato = true; // variabile per segnare se il thread è arrivato
 		for (int x=0; x<5; x++) {
 			if (threadpartecipanti[x].posizione == 0) { //controlla se il thread è arrivato
-				arrivato = false;
-			}
+				arrivato = false;		}
 		}
 	}
-        public static void main(String[] a) {
-		GCavalli g = new GCavalli();
-	}
-
     private void add(Campo corsia) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
