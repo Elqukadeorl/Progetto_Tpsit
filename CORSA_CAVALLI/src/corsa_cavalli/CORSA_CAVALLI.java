@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package corsa_cavalli;
-
+import javax.swing.*;
+import java.awt.*;
 /**
  *
  * @author Agron Qukaj
@@ -16,6 +17,8 @@ public class CORSA_CAVALLI {
      */
     public static void main(String[] args) {
         GCavalli g = new GCavalli();
+        Campo corsia = new Campo();
+        corsia.setVisible(true);
     }
     
 }

@@ -22,7 +22,7 @@ public class GCavalli extends JFrame{
 	public GCavalli() { //costruttore
 		super("Gara di equitazione");
 		setSize(500, 500); //grandezza della finestra
-		corsia = new Campo();
+		//corsia = new Campo();
 		partecipanti = new GUICavalli[5];
 		threadpartecipanti = new Cavalli[5];
                 
@@ -30,9 +30,9 @@ public class GCavalli extends JFrame{
 		/*for (int i=0; i<5; i++) { //inizio corsa
 			partecipanti[i] = new GUICavalli(partenza,  i + 1);
 			threadpartecipanti[i] = new Cavalli(partecipanti[i], this);		
-		}
-		this.add(corsia); //aggiungo la corsia
-		setVisible(true);*/
+		}*/
+		//this.add(corsia); //aggiungo la corsia
+                //setVisible(true);
 	}
         
         public synchronized int getPosizione() { //ritorna la posizione
