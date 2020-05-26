@@ -10,28 +10,37 @@ package corsa_cavalli;
  * @author Agron Qukaj
  */
 public class Cavalli implements Runnable{
-    Cavalli c;
+    GUICavalli c;
     GCavalli campo;
-    Thread t = new Thread(this);
+    int velocita;
+    Thread t;
+    int cambio; //cambio di velocità
     int posizione; //posizione
-    public Cavalli(Cavalli c, GCavalli cam) {
-		campo=cam;
+    public Cavalli(GUICavalli c, GCavalli cam) {
+		this.c = c;
+                campo=cam;
+                cambio = 0;
+                velocita = 2;
+                t = new Thread(this);
 		t.start();
 		posizione=0;
 	}
+    @Override
     public void run() {
-        int dimImmagine=500;
-        int dimPista=500;
-            while((c.getCoordx()+dimImmagine)<dimPista) {
-                c.setCoordx(c.getCoordx());
+        int dimImmagine=50;
+        int dimPista=960;
+            while((c.getCordinatax()+dimImmagine)<dimPista) {
+                if ((cambio % 10) == 0)
+                    velocita = (int)(Math.random()*4 + 1);
+                c.setCordinatax(c.getCordinatax()+ velocita);
+                cambio++;
+                try{ 
+                    Thread.sleep(75);
+                }
+                catch(Exception e){}
                 campo.repaint();
                 }
             posizione = campo.getPosizione();
+            campo.arrivi();
         }
-    private int getCoordx() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    private void setCoordx(int coord) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

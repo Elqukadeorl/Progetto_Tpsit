@@ -11,6 +11,7 @@ import java.awt.*;
  * @author Agron Qukaj
  */
 class Campo extends JPanel{
+    @Override
     public void paint(Graphics g){
         g.setColor(Color.green);
         g.fillRect(0, 0, 1000, 650);

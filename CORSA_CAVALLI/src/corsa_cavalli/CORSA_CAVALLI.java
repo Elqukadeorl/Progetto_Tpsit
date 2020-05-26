@@ -17,8 +17,8 @@ public class CORSA_CAVALLI {
      */
     public static void main(String[] args) {
         GCavalli g = new GCavalli();
-        Campo corsia = new Campo();
-        corsia.setVisible(true);
+       // Campo corsia = new Campo();
+       // corsia.setVisible(true);
     }
     
 }
