@@ -12,24 +12,26 @@ public class GCavalli extends JFrame{
     Campo corsia;
     Graphics offscreen;           
     Image buffer_virtuale;
+    int numCavalli;
 	/**
          * 
          * Il costruttore definisce la dimensione della pista e crea 10 cavalli e li assegna alla loro corsia
          */
-	public GCavalli() { //costruttore
+	public GCavalli(int x) { //costruttore
 		super("Gara di cavalli");
+                numCavalli = x;
 		setSize(1100, 750); //grandezza della finestra
                 setLocation(15, 45);
                 setDefaultCloseOperation(EXIT_ON_CLOSE);
 		corsia = new Campo();
-		partecipanti = new GUICavalli[10];
-		threadpartecipanti = new Cavalli[10];
+		partecipanti = new GUICavalli[numCavalli];
+		threadpartecipanti = new Cavalli[numCavalli];
                 posizione = 1;
                 /**
                  * @param partenza rappresenta la posizione di partenza e viene incrementata per inserire i cavalli nei loro posti di partenza
                  */
 		int partenza = 20; //posizione di partenza
-		for (int i=0; i<10; i++) { //inizio corsa
+		for (int i=0; i<numCavalli; i++) { //inizio corsa
 			partecipanti[i] = new GUICavalli(partenza,  i + 1);
 			threadpartecipanti[i] = new Cavalli(partecipanti[i], this);
                         partenza= partenza + 70;
@@ -49,7 +51,7 @@ public class GCavalli extends JFrame{
          */
 	public synchronized void arrivi() {
 		boolean arrivato = true; // variabile per segnare se il thread è arrivato
-		for (int x=0; x<10; x++) {
+		for (int x=0; x<numCavalli; x++) {
 			if (threadpartecipanti[x].posizione == 0) { //controlla se il thread è arrivato
 				arrivato = false;		
                         }
@@ -70,8 +72,8 @@ public class GCavalli extends JFrame{
             classifica.setBackground(Color.BLUE);
             classifica.setDefaultCloseOperation(EXIT_ON_CLOSE);
             classifica.getContentPane().setLayout(new GridLayout(5,1));
-            for(int x = 1; x < 11; x++){
-                for(int i = 0; i < 10; i++){
+            for(int x = 0; x < numCavalli+1; x++){
+                for(int i = 0; i < numCavalli; i++){
                     if(threadpartecipanti[i].posizione == x){
                         arrivi[i] = new JLabel (x + " classificato. Il cavallo nella corsia numero "+ (i+1));
                         arrivi[i].setFont(new Font("Arial", Font.ITALIC, 18));
@@ -101,7 +103,7 @@ public class GCavalli extends JFrame{
             offscreen = buffer_virtuale.getGraphics();
             Dimension d = getSize();
             corsia.paint(offscreen);
-            for(int i=0; i<10; i++)
+            for(int i=0; i<numCavalli; i++)
             {
                 partecipanti[i].paint(offscreen);
             }

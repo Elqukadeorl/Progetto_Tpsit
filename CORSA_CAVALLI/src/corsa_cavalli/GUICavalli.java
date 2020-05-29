@@ -43,15 +43,8 @@ class GUICavalli extends JPanel{
             case 9: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
             case 10: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}            
         }
-             
-            /*if (x != 11){
-                    img = tk.getImage("C:\\Users\\Agron Qukaj\\Desktop\\Progetto_Tpsit_Qukaj\\CORSA_CAVALLI\\src\\corsa_cavalli\\cavallo");
-                    //img = ImageIO.read(ClassLoader.getSystemResource("C:/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/src/cavallo/cavalli.jpg"));
-            
-            }*/
             mt.addImage(img, 0);
-               try
-        {
+            try{
             mt.waitForID(0);
         }
         catch(InterruptedException e){}
