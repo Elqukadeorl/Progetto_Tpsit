@@ -27,27 +27,71 @@ class GUICavalli extends JPanel{
             setSize(80, 90);
             Toolkit tk = Toolkit.getDefaultToolkit();
             MediaTracker mt = new MediaTracker(this);
-            
+           try { 
              switch(x)
         {
             //tutti i cavalli sono diversi
             //posiziono ogni cavallo nella sua posizione
-            case 1: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 2: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 3: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 4: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 5: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 6: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 7: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 8: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 9: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}
-            case 10: {img = tk.getImage("C:/Users/Agron Qukaj/Desktop/Progetto_Tpsit_Qukaj/CORSA_CAVALLI/src/corsa_cavalli/cavallo/cavalli.jpg");break;}            
+            case 1: {
+                
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg"));  
+            break;
+            }
+            case 2: {
+               
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg"));
+            break;
+            }
+            case 3: {
+              
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg"));
+            break;
+            }
+            case 4: {
+              
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg"));
+            break;
+            }
+            case 5: {
+               
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg")); 
+            break;
+            }
+            case 6: {
+               
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg"));
+            break;
+            }
+            case 7: {
+               
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg"));   
+            break;
+            }
+            case 8: {
+               
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg")); 
+            break;
+            }
+            case 9: {
+              
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg"));    
+            break;
+            }
+            case 10: {
+               
+            img = ImageIO.read(getClass().getResource("cavallo/cavalli.jpg"));
+            break;
+            }
         }
             mt.addImage(img, 0);
-            try{
-            mt.waitForID(0);
-        }
-        catch(InterruptedException e){}
+                try {
+                    mt.waitForID(0);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(GUICavalli.class.getName()).log(Level.SEVERE, null, ex);
+                }
+           } catch (IOException ex) {
+                    Logger.getLogger(GUICavalli.class.getName()).log(Level.SEVERE, null, ex);
+                }
         }
         /**
          * 

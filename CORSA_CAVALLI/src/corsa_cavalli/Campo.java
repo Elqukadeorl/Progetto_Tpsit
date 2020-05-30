@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  *
  *@author Adriano Qukaj
- * 
+ * classe che crea il campo
  */
 class Campo extends JPanel{
     
